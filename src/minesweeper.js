@@ -33,6 +33,11 @@ export const Minesweeper = function() {
     let customWrapper = document.createElement('div');
     customWrapper.setAttribute('id', 'custom-wrapper');
     let appElement = document.getElementById('app');
+    if (!appElement) {
+        const body = document.getElementsByTagName('body')[0];
+        appElement = document.createElement('div');
+        body.append(appElement);
+    }
     let leaderWrapper = document.createElement('div');
 
     let isMobile = false;
