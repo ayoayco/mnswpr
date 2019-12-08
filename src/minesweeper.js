@@ -748,6 +748,9 @@ export const Minesweeper = function() {
                 increaseFlagsCount();
                 setStatus(cell, 'default');
             }
+            if ('vibrate' in navigator) {
+                navigator.vibrate(100);
+            }
             if (TEST_MODE) loggerService.debug('right click', cell);
         }
     }
