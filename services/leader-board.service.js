@@ -108,6 +108,7 @@ export class LeaderBoardService {
                     nameElement.style.cursor = 'pointer';
                     nameElement.style.fontWeight = 'bold';
                     nameElement.style.fontStyle = 'italic';
+                    nameElement.onmousedown = () => console.log(game.id);
 
                     const indexElement = document.createElement('div');
                     indexElement.innerText = `#${i++}`;
