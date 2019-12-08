@@ -268,6 +268,15 @@ export const Minesweeper = function() {
         timerService.initialize(timerDisplay);
         updateFlagsCountDisplay();
         addMines(setting.mines);
+
+        // send google analytics event
+        if (gtag) {
+            gtag('event', 'mw-event', {
+                'event_category' : 'mw-game',
+                'event_label' : 'loaded-game'
+            });
+        }
+
     }
 
     function setBusy() {
@@ -519,7 +528,7 @@ export const Minesweeper = function() {
         if (gtag) {
             gtag('event', 'mw-event', {
                 'event_category' : 'mw-game',
-                'event_label' : 'end-game-a'
+                'event_label' : 'ended-game'
             });
         }
     }
@@ -684,7 +693,7 @@ export const Minesweeper = function() {
         if (gtag) {
             gtag('event', 'mw-event', {
                 'event_category' : 'mw-game',
-                'event_label' : 'start-game-a'
+                'event_label' : 'activated-game'
             });
         }
     }
