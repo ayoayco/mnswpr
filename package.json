@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server .",
-    "watch:dev": "node .\\node_modules\\webpack\\bin\\webpack.js --watch --mode development .",
-    "buildprod": "npm i && node .\\node_modules\\webpack\\bin\\webpack.js ."
+    "watch:dev": "node ./node_modules/webpack/bin/webpack.js --watch --mode development .",
+    "buildprod": "node ./node_modules/webpack/bin/webpack.js ."
   },
   "author": "",
   "license": "ISC",
