@@ -1,3 +1,6 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 export class DatabaseService {
     constructor() {
 // Your web app's Firebase configuration
