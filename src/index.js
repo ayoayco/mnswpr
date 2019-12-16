@@ -12,4 +12,3 @@ import { Minesweeper } from './minesweeper.js';
 /** start the game **/
 const myMinesweeper = new Minesweeper();
 myMinesweeper.initialize();
-console.log('hey');
