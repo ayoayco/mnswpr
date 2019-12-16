@@ -7,6 +7,7 @@
 */
 import './index.css';
 import './services/loading/loading.css';
+import './assets/favicon.ico';
 import { Minesweeper } from './minesweeper.js';
 
 /** start the game **/

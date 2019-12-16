@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server .",
+    "start": "http-server ./dist/",
     "watch:dev": "node ./node_modules/webpack/bin/webpack.js --watch --mode development .",
     "buildprod": "node ./node_modules/webpack/bin/webpack.js --mode production ."
   },
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "css-loader": "^3.3.0",
+    "file-loader": "^5.0.2",
     "http-server": "^0.12.0",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
