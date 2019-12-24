@@ -14,7 +14,7 @@ import {
 } from './services';
 import { levels } from './levels.js';
 
-const VERSION = "0.3.6";
+const VERSION = "0.3.7";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
 const TEST_MODE = false;

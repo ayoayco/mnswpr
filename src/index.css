@@ -69,7 +69,6 @@ h1 {
 #grid TR TD[data-status=flagged] {
   border: 1px outset #ececec;
   padding: 0px;
-  cursor: pointer;
 }
 
 #grid TR TD.mine {
