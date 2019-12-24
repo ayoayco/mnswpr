@@ -1,20 +1,12 @@
-/*
-    Author: Ayo Ayco
-    Email: ramon.aycojr@gmail.com
-    Website: AyoAyco.com
-    Blog: FullHacker.com
-    Live: games.fullhacker.com/minesweeper
-*/
-
 import {
     LeaderBoardService,
     LoggerService,
     StorageService,
     TimerService
-} from './services';
+} from './modules';
 import { levels } from './levels.js';
 
-const VERSION = "0.3.7";
+const VERSION = "0.3.8";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
 const TEST_MODE = false;

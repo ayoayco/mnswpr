@@ -1,4 +1,4 @@
-import { LeaderBoardService } from './src/services/leader-board.service.js';
+import { LeaderBoardService } from './src/modules/leader-board/leader-board';
 
 const leaderBoard = new LeaderBoardService('mw-leaders', 'mw-all');
 

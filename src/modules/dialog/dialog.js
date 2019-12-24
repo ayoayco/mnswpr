@@ -1,11 +1,3 @@
-/*
-    Author: Ayo Ayco
-    Email: ramon.aycojr@gmail.com
-    Website: AyoAyco.com
-    Blog: FullHacker.com
-    Live: games.fullhacker.com/minesweeper
-*/
-
 export const DialogService = function() {
     let isOpen = false;
     let isInitialized = false;
@@ -16,7 +8,6 @@ export const DialogService = function() {
     const container = document.createElement('div');
     container.className = 'dialog-container';
     
-    // add dialog wrapper and container elements
     this.initialize = function() {
         const bodyElement = document.getElementsByTagName('body')[0];
         wrapper.appendChild(container);

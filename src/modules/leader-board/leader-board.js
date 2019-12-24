@@ -1,7 +1,7 @@
-import { DatabaseService } from "./db.service.js";
-import { TimerService } from "./timer.service.js";
-import { UserService } from "./user.service.js";
-import { LoadingService } from "./loading/loading.js";
+import { DatabaseService } from '../database/db';
+import { TimerService } from '../timer/timer';
+import { UserService } from '../user/user';
+import { LoadingService } from '../loading/loading';
 
 const dbService = new DatabaseService();
 const timerService = new TimerService();
@@ -63,6 +63,7 @@ export class LeaderBoardService {
                 this.unsubscribe();
             }
             this.lastPlace = Number.MAX_SAFE_INTEGER;
+            // todo: use 'where' to filter by day, week, month, and all-time
             this.topList = this.leaders.doc(level)
                 .collection('games').orderBy('time').limit(10);
             this.unsubscribe = this.setListener(this.topList, displayElement, title);
@@ -98,7 +99,7 @@ export class LeaderBoardService {
                     const name = game.data().name || 'Anonymous';
                     const item = document.createElement('div');
                     item.style.display = 'flex';
-                    const nameElement =document.createElement('div'); // `<span class="ellipsis" title="${name}">${name}</span>` ;
+                    const nameElement =document.createElement('div');
                     nameElement.innerHTML = name;
                     nameElement.setAttribute('title', name);
                     nameElement.style.textOverflow = 'ellipsis';

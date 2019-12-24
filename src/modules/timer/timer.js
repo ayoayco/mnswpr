@@ -1,12 +1,4 @@
-import { LoggerService } from "./logger.service.js";
-
-/*
-    Author: Ayo Ayco
-    Email: ramon.aycojr@gmail.com
-    Website: AyoAyco.com
-    Blog: FullHacker.com
-    Live: games.fullhacker.com/minesweeper
-*/
+import { LoggerService } from "../logger/logger";
 
 const INTERVAL = 1;
 
@@ -30,7 +22,6 @@ export class TimerService {
     start() {
         if (this.running || !this.display) return;
 
-        // run timer
         this.running = true;
         this.startTime = new Date().getTime();
         this.id = window.setInterval(() => this.updateDisplay(), INTERVAL);
