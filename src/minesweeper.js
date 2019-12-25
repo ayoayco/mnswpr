@@ -16,7 +16,7 @@ export const Minesweeper = function() {
     const storageService = new StorageService();
     const timerService = new TimerService();
     const loggerService = new LoggerService();
-    const leaderBoard = new LeaderBoardService('mw-leaders', 'mw-all');
+    const leaderBoard = new LeaderBoardService('mw-leaders', 'mw-all', 'mw-config');
 
     let grid = document.createElement('table');
     grid.setAttribute('id', 'grid');
@@ -307,6 +307,7 @@ export const Minesweeper = function() {
         cell.addEventListener('touchend', ontouchend);
 
         let ontouchstart = function(e) {
+            isMobile = true;
             if (!isBusy && typeof e === 'object') {
                 startTouchTimer(this);
             }
@@ -327,7 +328,11 @@ export const Minesweeper = function() {
         document.onkeydown = function(e) {
             if (e.keyCode == 32) {
                 generateGrid();
-                return false;
+                if ('preventDefault' in e) {
+                    e.preventDefault();
+                } else {
+                    return false;
+                }
             }
             resetMouseEventFlags();
         }
@@ -344,6 +349,7 @@ export const Minesweeper = function() {
             resetMouseEventFlags();
         }
         document.onmousedown = function(e) {
+            isMobile = false;
             switch (e.button) {
                 case 0: pressed = 'left'; isLeft = true; break;
                 case 1: pressed = 'middle'; break;
@@ -516,7 +522,9 @@ export const Minesweeper = function() {
         const game = {
             time,
             status: win ? 'win' : 'loss',
-            level: setting.name
+            level: setting.name,
+            time_stamp: new Date(),
+            isMobile
         }
         leaderBoard.send(game, 'time');
         // send google analytics event

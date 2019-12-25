@@ -2,19 +2,29 @@ import { DatabaseService } from '../database/db';
 import { TimerService } from '../timer/timer';
 import { UserService } from '../user/user';
 import { LoadingService } from '../loading/loading';
+import { LoggerService } from '../logger/logger';
 
 const dbService = new DatabaseService();
 const timerService = new TimerService();
 const loadingService = new LoadingService();
+const loggerService = new LoggerService();
 const db = dbService.store;
 const user = new UserService();
 let previousLevel;
 
 
 export class LeaderBoardService {
-    constructor(leaders, all) {
+    constructor(leaders, all, configuration) {
         this.leaders = db.collection(leaders);
         this.all = db.collection(all);
+        db.collection(configuration)
+            .doc('configuration')
+            .get()
+            .then(res => {
+                this.configuration = res.data();
+                this.configurationPromt();
+            })
+            .catch(err => console.error(err));
     }
 
     updateTimeStampsLeaders() {
@@ -141,15 +151,12 @@ export class LeaderBoardService {
         const sessionId = new Date().toDateString().replace(/\s/g, '_');
         const gameId = new Date().toTimeString().replace(/\s/g, '_');
         const data = {};
-        game = {
-            time_stamp: new Date(),
-            ...game
-        }
         data[gameId] = game;
         this.all.doc(user.browserId).collection('games').doc(sessionId).set(data, {merge: true});
 
-        if (game.status === 'win' && game[key] < this.lastPlace) {
-            let name = window.prompt('Top performance! Enter your name:');
+
+        if (this.configuration && game.status === this.configuration.passingStatus && game[key] < this.lastPlace) {
+            let name = window.prompt(this.configuration.message);
             if (!name) {
                 name = 'Anonymous';
             }
@@ -161,6 +168,12 @@ export class LeaderBoardService {
             }
 
             this.leaders.doc(game.level).collection('games').add(newGame);
+        }
+    }
+
+    configurationPromt() {
+        if (!this.configuration) {
+            loggerService.debug('Failed to fetch server configuration. Please contact your developer.');
         }
     }
 }
