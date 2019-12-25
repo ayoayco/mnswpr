@@ -6,7 +6,7 @@ import {
 } from './modules';
 import { levels } from './levels.js';
 
-const VERSION = "0.3.8";
+const VERSION = "0.3.9";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
 const TEST_MODE = false;
@@ -327,6 +327,7 @@ export const Minesweeper = function() {
         document.onkeydown = function(e) {
             if (e.keyCode == 32) {
                 generateGrid();
+                return false;
             }
             resetMouseEventFlags();
         }
