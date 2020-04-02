@@ -10,6 +10,7 @@ const VERSION = "0.3.11";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
 const TEST_MODE = false;
+const CASUAL_MODE = false;
 
 export const Minesweeper = function() {
     const _this = this;
@@ -257,7 +258,9 @@ export const Minesweeper = function() {
         appElement.style.margin = '0 auto';
 
 
-        initializeLeaderBoard();
+        if (!CASUAL_MODE) {
+            initializeLeaderBoard();
+        }
 
         timerService.initialize(timerDisplay);
         updateFlagsCountDisplay();
