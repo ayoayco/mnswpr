@@ -9,7 +9,7 @@ import { levels } from './levels.js';
 const VERSION = "0.3.11";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
-const TEST_MODE = false;
+const TEST_MODE = true;
 
 export const Minesweeper = function() {
     const _this = this;
