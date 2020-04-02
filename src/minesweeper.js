@@ -530,6 +530,9 @@ export const Minesweeper = function() {
             isMobile
         }
 
+        // To do - check if:
+        // 1. number of flags remaining is zero
+        // 2. all mines are correctly flagged
         if (!TEST_MODE) {
             leaderBoard.send(game, 'time');
         }
