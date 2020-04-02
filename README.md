@@ -12,4 +12,4 @@ To start the dev server, first run `npm run watch:dev` then in another terminal,
 
 ## Live Demo
 
-The current live site is here: (https://mnswpr.fullhacker.com)
+The current live site is here: (https://mnswpr.com)
