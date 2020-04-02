@@ -526,7 +526,11 @@ export const Minesweeper = function() {
             time_stamp: new Date(),
             isMobile
         }
-        leaderBoard.send(game, 'time');
+
+        if (!TEST_MODE) {
+            leaderBoard.send(game, 'time');
+        }
+
         // send google analytics event
         if (gtag) {
             gtag('event', 'mw-event', {
