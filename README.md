@@ -6,8 +6,7 @@ This is a single page web application featuring the classic game, Minesweeper.
 Built on HTML, JS, and CSS.
 
 ## Development
-To start development,
-0. You need node v16 (the dev server doesn't work on v18 *yet*)
+To start development, you need node v16 (the dev server doesn't work on v18 *yet*). Once you know you have this, you can do the following:
 1. Install dependencies: `npm i`
 2. Start the dev server: `npm run dev`
 
