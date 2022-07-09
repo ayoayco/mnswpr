@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"npm run watch:dev\" \"npm start\"",
     "start": "http-server ./dist/",
     "watch:dev": "node ./node_modules/webpack/bin/webpack.js --watch --mode development .",
     "buildprod": "node ./node_modules/webpack/bin/webpack.js --mode production ."
@@ -15,6 +16,7 @@
     "firebase": "^7.24.0"
   },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "css-loader": "^3.6.0",
     "file-loader": "^5.1.0",
     "http-server": "^0.12.3",

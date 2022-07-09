@@ -10,7 +10,7 @@ Built on HTML, JS, and CSS.
 
 To start development, download/fork the repository then run: `npm i`
 
-To start the dev server, first run `npm run watch:dev` then in another terminal, run `npm start`
+To start the dev server, first run `npm run dev`
 
 ## Live Demo
 
