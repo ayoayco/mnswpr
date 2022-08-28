@@ -1,7 +1,8 @@
 {
   "name": "mw",
   "version": "1.0.0",
-  "description": "",
+  "description": "Classic Minesweeper browser game",
+  "author": "Ayo Ayco",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,11 +11,11 @@
     "watch:dev": "node ./node_modules/webpack/bin/webpack.js --watch --mode development .",
     "buildprod": "node ./node_modules/webpack/bin/webpack.js --mode production ."
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "firebase": "^7.24.0"
   },
+
   "devDependencies": {
     "concurrently": "^7.2.2",
     "css-loader": "^3.6.0",
