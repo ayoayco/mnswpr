@@ -10,5 +10,8 @@ To start development, you need node v16 (the dev server doesn't work on v18 *yet
 1. Install dependencies: `npm i`
 2. Start the dev server: `npm run dev`
 
+## Running Locally
+After running the commands to start development, open in a browser: `http://localhost:4200`
+
 ## Live Demo
 The current live site is here: (https://mnswpr.com)

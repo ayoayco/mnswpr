@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently --kill-others \"npm run watch:dev\" \"npm start\"",
-    "start": "http-server ./dist/",
+    "start": "http-server ./dist/ -a localhost -p 4200",
     "watch:dev": "node ./node_modules/webpack/bin/webpack.js --watch --mode development .",
     "buildprod": "node ./node_modules/webpack/bin/webpack.js --mode production ."
   },
