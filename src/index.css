@@ -29,8 +29,9 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
   background: -webkit-linear-gradient(90deg,#ff8a00,#e52e71);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none; -o-user-select:none;
 }
 
 #grid {
@@ -62,7 +63,7 @@ h1 {
   padding: 0px;
   background: #c0d0c0;
   border: 1px solid #c0c0c0;
-  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+  -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none; -o-user-select:none;
 }
 
 #grid TR TD[data-status=default],
