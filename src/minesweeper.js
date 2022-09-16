@@ -6,13 +6,13 @@ import {
 } from './modules';
 import { levels } from './levels.js';
 
-const VERSION = "0.3.11";
+const VERSION = "0.3.12";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
 const TEST_MODE = false;
 const CASUAL_MODE = false;
 
-export const Minesweeper = function() {
+export const Minesweeper = function(appId) {
     const _this = this;
     const storageService = new StorageService();
     const timerService = new TimerService();
@@ -27,7 +27,7 @@ export const Minesweeper = function() {
     let footbar = document.createElement('div');
     let customWrapper = document.createElement('div');
     customWrapper.setAttribute('id', 'custom-wrapper');
-    let appElement = document.getElementById('app');
+    let appElement = document.getElementById(appId);
     if (!appElement) {
         const body = document.getElementsByTagName('body')[0];
         appElement = document.createElement('div');
