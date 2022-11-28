@@ -6,7 +6,7 @@ import {
 } from './modules';
 import { levels } from './levels.js';
 
-const TEST_MODE = true; // set to true if you want to test the game with visual hints and separate leaderboard
+const TEST_MODE = false; // set to true if you want to test the game with visual hints and separate leaderboard
 const VERSION = "0.3.12";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
@@ -69,20 +69,27 @@ export const Minesweeper = function(appId) {
     let minesArray = [];
 
     this.initialize = function() {
-
-        appElement.innerHTML = '';
-        const heading = `Minesweeper v${VERSION}`;
         const headingElement = document.createElement('h1');
-        headingElement.innerText = heading;
-
         const gameBoard = document.createElement('div');
+
+        headingElement.innerText = `Minesweeper v${VERSION}`;
         gameBoard.setAttribute('id', 'game-board');
-
         gameBoard.append(initializeToolbar(), grid, initializeFootbar());
-
+        appElement.innerHTML = '';
         appElement.append(headingElement, gameBoard);
-        generateGrid()
-        // appElement.append(gameWrapper);
+        appElement.append(initializeSourceLink());
+
+        generateGrid();
+    }
+
+    function initializeSourceLink() {
+        const sourceLink = document.createElement('a');
+        sourceLink.href = 'https://github.com/ayoayco/mnswpr';
+        sourceLink.innerText = 'Source code';
+        sourceLink.target = '_blank';
+        sourceLink.style.color = 'white';
+
+        return sourceLink;
     }
 
     function initializeLeaderBoard() {
@@ -114,21 +121,20 @@ export const Minesweeper = function(appId) {
             levelsDropdown.add(levelOption, null);
         });
 
-        const customOption = document.createElement('option');
-        customOption.onmousedown = () => {}
-        customOption.value = 'custom';
-        customOption.text = 'Custom';
+        // custom level
+        // const customOption = document.createElement('option');
+        // customOption.onmousedown = () => {}
+        // customOption.value = 'custom';
+        // customOption.text = 'Custom';
         // levelsDropdown.add(customOption);
+
         if (TEST_MODE) {
             const testLevel = document.createElement('span');
             testLevel.innerText = 'Test Mode';
             footBar.append(testLevel);
         } else {
-
             footBar.append(levelsDropdown);
         }
-
-
 
         return footBar;
     }
@@ -256,7 +262,6 @@ export const Minesweeper = function(appId) {
         appElement.style.minWidth = '260px';
         appElement.style.width = `${grid.offsetWidth + 40}px`;
         appElement.style.margin = '0 auto';
-
 
         if (!CASUAL_MODE) {
             initializeLeaderBoard();
