@@ -18,7 +18,7 @@ But it is also an opportunity.
 
 I wanted to give her the same game, with a similar leader board she can dominate. And this is also a chance for me to dig deeper into vanilla JS.
 
-Can I make page with complex interactions (more on this later) without any dependency?
+Can I make a page with complex interactions (more on this later) without any library dependency?
 
 ## What I have learned:
 
