@@ -9,6 +9,8 @@ Stack:
 - Firebase for leader board store
 - Netlify for hosting
 
+*❗️ __Warning:__ This is a very messy code; a product of quick hacking and shipping while live users are giving feedback*
+
 ## Project motivation
 One day, while working in my home office, I heard loud and fast mouse clicks coming from our bedroom. It's my wife, playing her favorite game (Minesweeper) on a crappy website full of advertisements.
 
@@ -36,7 +38,9 @@ To start development, you need node v16 (the dev server doesn't work on v18 *yet
 1. Install dependencies: `npm i`
 2. Start the dev server: `npm run dev`
 
-*Sorry there's no hot reloading. You have to reload the app after making a change. OR contribute to enable HMR? ;)*
+
+*📝 __Note:__ There's no hot reloading. You have to reload the app after making a change. OR contribute to enable HMR? ;)*
+
 
 ## Running Locally
 After running the commands to start development, open in a browser: `http://localhost:4200`
