@@ -24,7 +24,7 @@ Can I make page with complex interactions (more on this later) without any depen
 
 ✨ We don't always necessarily *need* JS frameworks (or TS) ✨
 
-✨ Even subtle UI changes *can improve* user experience ✨
+✨ Even subtle UI changes *can improve* user gameplay experience ✨
 
 ✨ There's more ways to break you're app than you are initially aware of ✨
 
