@@ -17,5 +17,6 @@ export class DatabaseService {
         };
         firebase.initializeApp(config);
         this.store = firebase.firestore();
+        console.log('>>>', process.env.APP_ENVIRONMENT);
     }
 }
