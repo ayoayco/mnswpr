@@ -6,10 +6,10 @@ import {
 } from './modules';
 import { levels } from './levels.js';
 
+const TEST_MODE = true; // set to true if you want to test the game with visual hints and separate leaderboard
 const VERSION = "0.3.12";
 const MOBILE_BUSY_DELAY = 250;
 const PC_BUSY_DELAY = 500;
-const TEST_MODE = false;
 const CASUAL_MODE = false;
 
 export const Minesweeper = function(appId) {

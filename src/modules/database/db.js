@@ -3,6 +3,9 @@ import 'firebase/firestore';
 
 export class DatabaseService {
     constructor() {
+        // keys to interact with firebase
+        // not a secret: https://stackoverflow.com/questions/37482366/is-it-safe-to-expose-firebase-apikey-to-the-public/37484053#37484053
+        // but better moved to an environment variable
         const config = {
             apiKey: "AIzaSyAbDzNHCSFh59e3r5sZA4_2ZHJnJ6SCCxM",
             authDomain: "moment-188701.firebaseapp.com",
