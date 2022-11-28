@@ -21,16 +21,13 @@ I wanted to give her the same game, with a similar leader board she can dominate
 Can I make a page with complex interactions (more on this later) without any library dependency?
 
 ## What I have learned:
+1. JS is awesome ✨
+1. We don't always necessarily *need* JS frameworks (or TS) ✨
+1. Even subtle UI changes *can improve* user gameplay experience ✨
+1. There's more ways to break you're app than you are initially aware of ✨
+1. Competition motivates users to use your app more ✨
+1.  Hash in bundled filenames help issues in browser caching (when shipping versions fast) ✨
 
-✨ We don't always necessarily *need* JS frameworks (or TS) ✨
-
-✨ Even subtle UI changes *can improve* user gameplay experience ✨
-
-✨ There's more ways to break you're app than you are initially aware of ✨
-
-✨ Competition motivates users to use your app more ✨
-
-✨ Hash in bundled filenames help issues in browser caching (when shipping versions fast) ✨
 ## Development
 To start development, you need node v16 (the dev server doesn't work on v18 *yet*). Once you know you have this, you can do the following:
 1. Install dependencies: `npm i`
