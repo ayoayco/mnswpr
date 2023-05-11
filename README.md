@@ -1,9 +1,9 @@
 # Play Minesweeper Online
 [![Netlify Status](https://api.netlify.com/api/v1/badges/172478bd-afc5-4e47-95ba-d9ab814248fb/deploy-status)](https://app.netlify.com/sites/mnswpr/deploys)
 
-This is the classic game **Minesweeper** built with vanilla JS (i.e., no framework dependency).
+Play it here: [mnswpr.com](https://mnswpr.com). This is the classic game **Minesweeper** built with vanilla web technologies (i.e., no framework dependency).
 
-Stack:
+Technology Stack:
 - HTML, JS, and CSS
 - Webpack for bundling
 - Firebase for leader board store
