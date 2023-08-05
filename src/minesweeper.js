@@ -99,7 +99,8 @@ export const Minesweeper = function(appId) {
         const title = `Best Times (${setting.name})`;
         leaderBoard.update(setting.name, leaderWrapper, title);
 
-        appElement?.append(leaderWrapper);
+        if(appElement)
+            appElement.append(leaderWrapper);
     }
 
     function initializeFootbar() {
