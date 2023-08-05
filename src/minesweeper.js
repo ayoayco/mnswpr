@@ -1,3 +1,5 @@
+// @ts-check
+
 import {
     LeaderBoardService,
     LoggerService,
@@ -75,10 +77,11 @@ export const Minesweeper = function(appId) {
         headingElement.innerText = `Minesweeper v${VERSION}`;
         gameBoard.setAttribute('id', 'game-board');
         gameBoard.append(initializeToolbar(), grid, initializeFootbar());
-        appElement.innerHTML = '';
-        appElement.append(headingElement, gameBoard);
-        appElement.append(initializeSourceLink());
-
+        if(appElement) {
+            appElement.innerHTML = '';
+            appElement.append(headingElement, gameBoard);
+            appElement.append(initializeSourceLink());
+        }
         generateGrid();
     }
 
@@ -96,7 +99,7 @@ export const Minesweeper = function(appId) {
         const title = `Best Times (${setting.name})`;
         leaderBoard.update(setting.name, leaderWrapper, title);
 
-        appElement.append(leaderWrapper);
+        appElement?.append(leaderWrapper);
     }
 
     function initializeFootbar() {
@@ -259,9 +262,11 @@ export const Minesweeper = function(appId) {
         gameStatus.value = 'inactive';
         grid.setAttributeNode(gameStatus);
 
-        appElement.style.minWidth = '260px';
-        appElement.style.width = `${grid.offsetWidth + 40}px`;
-        appElement.style.margin = '0 auto';
+        if (appElement) {
+            appElement.style.minWidth = '260px';
+            appElement.style.width = `${grid.offsetWidth + 40}px`;
+            appElement.style.margin = '0 auto';
+        }
 
         if (!CASUAL_MODE) {
             initializeLeaderBoard();
@@ -270,14 +275,6 @@ export const Minesweeper = function(appId) {
         timerService.initialize(timerDisplay);
         updateFlagsCountDisplay();
         addMines(setting.mines);
-
-        // send google analytics event
-        if (gtag) {
-            gtag('event', 'mw-event', {
-                'event_category' : 'mw-game',
-                'event_label' : 'loaded-game'
-            });
-        }
 
     }
 
@@ -326,8 +323,7 @@ export const Minesweeper = function(appId) {
 
     function initializeEventHandlers(_cell) {
 
-        let cell = document.createElement('td');
-        cell = _cell;
+        let cell = _cell;
         skip = false;
         skipCondition = false;
 
@@ -398,7 +394,7 @@ export const Minesweeper = function(appId) {
                 skipCondition = false;
                 return;
             }
-            if (!isBusy && typeof e === 'object' && e.button != '2') {
+            if (!isBusy && typeof e === 'object' && e.button != 2) {
                 mouseUpCallBackArray[e.button].call(_this, this);
             }
         }
@@ -539,13 +535,6 @@ export const Minesweeper = function(appId) {
             leaderBoard.send(game, 'time');
         }
 
-        // send google analytics event
-        if (gtag) {
-            gtag('event', 'mw-event', {
-                'event_category' : 'mw-game',
-                'event_label' : 'ended-game'
-            });
-        }
     }
 
     function handleWinRevelation(cell) {
@@ -704,13 +693,6 @@ export const Minesweeper = function(appId) {
         grid.setAttribute('game-status', 'active');
         // start timer
         timerService.start();
-        // send google analytics event
-        if (gtag) {
-            gtag('event', 'mw-event', {
-                'event_category' : 'mw-game',
-                'event_label' : 'activated-game'
-            });
-        }
     }
 
     function gameIsDone() {
@@ -896,7 +878,7 @@ export const Minesweeper = function(appId) {
             } else {
                 updateCellValue(cell, mineCount.toString());
                 const dataValue = document.createAttribute('data-value');
-                dataValue.value = mineCount;
+                dataValue.value = mineCount.toString();
                 cell.setAttributeNode(dataValue);
             }
             //Count and display the number of adjacent mines
